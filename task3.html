@@ -1,0 +1,186 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+    <style>
+      #head {
+        background-color: yellow;
+        border: 2px solid black;
+        width: 400px;
+      }
+
+      #text {
+        border: 2px solid black;
+        width: 600px;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Task 1  -->
+    <div>
+      <h1 id="head">Hello World!</h1>
+
+      <script>
+        let myTagElement = document.getElementById("head");
+
+        myTagElement.addEventListener("mouseover", changeText);
+        myTagElement.addEventListener("mouseout", returnText);
+
+        //   onmouseout = changeText();
+
+        function changeText() {
+          myTagElement.innerHTML = "How I can help You?";
+        }
+
+        function returnText() {
+          myTagElement.innerHTML = "Hello World!";
+        }
+      </script>
+    </div>
+    <br /><br /><br /><br /><br />
+
+    <!-- Task 2 -->
+    <div>
+      <select id="countrySelect">
+        <option value="Jordan">Jordan</option>
+        <option value="Palestine">Palestine</option>
+      </select>
+
+      <br />
+
+      <img
+        id="countryImage"
+        src="images/Flag_of_Jordan.svg.png"
+        height="300px"
+        width="600px"
+      />
+
+      <script>
+        let selectElement = document.getElementById("countrySelect");
+        let flag_image = document.getElementById("countryImage");
+
+        selectElement.addEventListener("click", selector);
+
+        function selector() {
+          if (selectElement.value == "Jordan") {
+            flag_image.src =
+              "images/Flag_of_Jordan.svg.png";
+          } else {
+            flag_image.src =
+              "images/Palestine_flag.jpg";
+          }
+        }
+      </script>
+    </div>
+
+    <br /><br /><br /><br /><br />
+
+    <!-- Task3 3 -->
+    <div>
+      <select id="fontSelect">
+        <option value="timesNewRoman">Times New Roman</option>
+        <option value="fantasy">Fantasy</option>
+      </select>
+
+      <select id="sizeSelect">
+        <option value="fourteen">14px</option>
+        <option value="eaighteen">18px</option>
+      </select>
+
+      <input type="checkbox" id="italic" name="fontDecoration" value="italic" />
+      <label for="italic">Italic</label>
+
+      <input type="checkbox" id="bold" name="fontDecoration" value="bold" />
+      <label for="bold">Bold</label>
+
+      <input
+        type="checkbox"
+        id="underline"
+        name="fontDecoration"
+        value="underline"
+      />
+      <label for="underline">Underline</label>
+
+      <p id="text">The quick brown fox jumps over the lazy dog</p>
+      <script>
+        let sentence = document.getElementById("text");
+      </script>
+      <!-- font family -->
+      <script>
+        let fontType = document.getElementById("fontSelect");
+        fontType.addEventListener("click", changeFont);
+
+        function changeFont() {
+          if (fontType.value == "timesNewRoman") {
+            sentence.style.fontFamily = "Times New Roman";
+          } else {
+            sentence.style.fontFamily = "Fantasy";
+          }
+        }
+      </script>
+
+      <!-- font size -->
+      <script>
+        let fontSize = document.getElementById("sizeSelect");
+
+        fontSize.addEventListener("click", changeSize);
+
+        function changeSize() {
+          if (fontSize.value == "fourteen") {
+            sentence.style.fontSize = "14px";
+          } else {
+            sentence.style.fontSize = "18px";
+          }
+        }
+      </script>
+
+      <!-- italic -->
+      <script>
+        let choice1 = document.getElementById("italic");
+        choice1.addEventListener("click", selcetChoice);
+
+        function selcetChoice() {
+          if (choice1.checked) {
+            sentence.style.fontStyle = "italic";
+          } else {
+            sentence.style.fontStyle = "normal";
+          }
+        }
+      </script>
+
+      <!-- Bold -->
+      <script>
+        let choice2 = document.getElementById("bold");
+        choice2.addEventListener("click", selcetChoice2);
+
+        function selcetChoice2() {
+          if (choice2.checked) {
+            sentence.style.fontWeight = "bold";
+          } else {
+            sentence.style.fontWeight = "normal";
+          }
+        }
+      </script>
+
+      <!-- Underline -->
+      <script>
+        let choice3 = document.getElementById("underline");
+        choice3.addEventListener("click", selcetChoice3);
+
+        function selcetChoice3() {
+          if (choice3.checked) {
+            sentence.style.textDecoration = "underline";
+          } else {
+            sentence.style.textDecoration = "none";
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

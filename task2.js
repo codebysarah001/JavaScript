@@ -261,9 +261,276 @@ Ex: calculateSupply(30, 3);
 => 'You will need 76650 cups of tea to last you until the ripe old age of 100;
 */
 
-function calculateSupply(age , amount_per_day){
+// function calculateSupply(age , amount_per_day){
 
-    return "You will need "+ amount_per_day +" cups of tea to last you until the ripe old age of "+age;
+//     max_age = 100 - age;
+//     total_age = max_age * 365 * amount_per_day;
+//     return "You will need "+ amount_per_day +" cups of tea to last you until the ripe old age of "+total_age;
+// }
+// console.log(calculateSupply(30, 3));// harrrrrd
+
+/*
+4
+Write a function called greet that:
+takes 1 argument: name.
+and it will return hello + name
+
+Ex: greet("Adam")
+=> "Hello Adam"
+*/
+
+// function greet(name){
+//     return "hello "+name;
+// }
+
+// console.log(greet("sarah"));
+
+/*
+5
+what is the error:
+function double(cat) {
+  return 2 * x;  // x isnot defined
 }
-console.log(calculateSupply(30, 3));// harrrrrd
 
+function double(7) { // unexpected number
+  return 2 * 7;
+}
+
+function double('7') { // unexpected string
+  return 2 * 'x';
+}
+*/
+
+/*
+6
+fix these functions:
+func double1(x {
+  return 2 * x ;
+}
+
+functiondouble2 x)
+return 2 * x;
+}
+
+function (x) double3 {
+  return 2 * x;
+
+*/
+
+// function double1(x ){
+//     return 2 * x ;
+//   }
+
+// function double2 (x){
+//   return 2 * x;
+//   }
+
+//   function  double3 (x){
+//     return 2 * x;
+//   }
+
+/*
+7
+Write a function called cube that:
+accept 1 parameter and calculate the cube of this number
+
+Ex: cube(4)
+=> 64
+*/
+// function cube(number){
+//     return number**3;
+// }
+// let number  =6;
+// console.log("the cumber of "+number+" is :"+cube(number));
+
+/*
+8
+Write a function called multiply that:
+accept 2 parameters and calculate the multiply of these 2 numbers
+
+Ex: multiply(3,4)
+=> 12
+Ex: multiply(5,4)
+=> 20
+*/
+
+// function multiply(number1,number2)
+// {
+//     return number1*number2;
+// }
+// let number1 = 5;
+// let number2 = 8;
+// console.log("the multiply of "+ number1 +" *" +number2+" is:"+ multiply(number1,number2));
+
+
+/*
+9
+Write a function called canIGetADrivingLicense that:
+accept 1 parameter represent the age
+and if the age greater than or equal to 20 return "yes you can"
+otherwise return "please come back after X years to get one"
+
+Ex: canIGetADrivingLicense(21)
+=> "yes you can"
+
+Ex: canIGetADrivingLicense(17)
+=> "please come back after 3 years to get one"
+
+Ex: canIGetADrivingLicense(20)
+=> "yes you can"
+
+*/
+
+// function canIGetADrivingLicense(age){
+//     if (age >= 20){
+//         return "yes you can"
+//     }
+//     else{
+//         return "please come back after "+age+ " years to get one";
+//     }
+// }
+// console.log(canIGetADrivingLicense(14));
+
+/*
+10
+Write a function called sameLength
+that accepts two strings as arguments,
+and returns true if those strings have the same length, and false otherwise.
+
+**hint: how we can know string length   Ex: : "tree".length   => 4
+
+Ex: sameLength("tree","clue")
+=> true
+
+Ex: sameLength("tree","car")
+=> false
+*/
+
+// function sameLength(string1 , string2){
+//     let lenstr1 = string1.length;
+//     let lenstr2 = string2.length;
+//     if (lenstr1 == lenstr2){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+
+// console.log(sameLength("sarah","jalal"));
+
+/*
+11
+Write a function called largerNubmer
+that accept two numbers as arguments,
+and return the first larger numbers
+
+Ex: largerNubmer(5,6)
+=> 6
+
+Ex: largerNubmer(5,3)
+=> 5
+*/
+
+function largerNubmer(number1,number2){
+    max_number  = number1;
+    if (number2 > max_number){
+        max_number = number2;
+    }
+    return max_number;
+}
+
+console.log("the maximum number is :"+ largerNubmer(4,5));
+
+/*
+12
+Write a function called smallerNubmer
+that accept three numbers as arguments,
+and return the first smaller number
+
+Ex: smallerNubmer(8,6,7)
+=> 6
+
+Ex: smallerNubmer(5,99,34)
+=> 5
+
+Ex: smallerNubmer(5,99,3)
+=> 3
+
+Ex: smallerNubmer(5,3,3)
+=> 3
+
+*/
+
+function smallerNubmer(number1, number2, number3){
+    min_number = number1;
+    if (number2 < min_number){
+        min_number = number2;
+    }
+    else if (number3 < min_number){
+        min_number = number3;
+    }
+    return min_number;
+}
+
+console.log("The minm number is :"+smallerNubmer(4,7,-5));
+
+/*
+13
+Write a function called shorterString
+that accept five string as an arguments,
+and return the first shorter string
+
+Ex: shorterString("air","school","car","by","github")
+=> by
+
+Ex: shorterString("air","tr","car","by","github")
+=> tr
+
+Ex: shorterString("by","tr","car","air","github")
+=> by
+
+Ex: shorterString("air","by","car","school","github")
+=> by
+
+Ex: shorterString("air","tr","by","car","github")
+=> by
+
+Ex: shorterString("air","tr","car","github","by")
+=> by
+
+*/
+
+// function shorterString(str1,str2,str3,str4,str5){
+//     minstr = str1.length;
+//     if (str2.length < minstr){
+//         minstr = str2;
+//     }
+//     else if (str3.length < minstr){
+//         minstr = str3;
+//     }
+//     else if (str4.length < minstr){
+//         minstr = str4;
+//     }
+//     else if (str5.length < minstr){
+//         minstr = str5;
+//     }
+//     return minstr;
+// }
+
+// console.log(shorterString("air","tr","car","github","by"));
+
+/*
+14
+Write a function called longerString
+that accept four string as an arguments,
+and return the first longer string
+
+Ex: longerString("air","school","car","github")
+=> school
+
+Ex: longerString("air","schoo","car","github")
+=> github
+
+try all the cases (change the order of the longestString)
+*/
