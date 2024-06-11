@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        #welcome{
+            background-color: yellow;
+            border :3px solid black;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: blue;
+        }
+
+        #text{
+            border :3px solid black;
+            width: 400px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Exercise #1 -->
+     <div>
+        <h1 id = "welcome">Hello World!</h1>
+
+        <script>
+            let tagElement = document.getElementById("welcome");
+
+            tagElement.addEventListener("mouseover",changeText);
+            tagElement.addEventListener("mouseout",returnText);
+
+            function changeText(){
+                tagElement.innerText = "Can I help you?";
+            }
+
+            function returnText(){
+                tagElement.innerText = "Hello World!";
+            }
+        </script>
+     </div>
+
+     <br><br>
+
+      <!-- Exercise #2 -->
+     <div>
+       <h1 id="box"></h1>
+
+        <script>
+            let boxElement = document.getElementById("box");
+
+            boxElement.addEventListener("click",changeColor);
+
+            function changeColor(){
+                boxElement.style.backgroundColor = "red";
+            }
+        </script>
+     </div>
+
+     <br><br>
+
+     <!-- Exercise #3 -->
+      <div>
+        <select id="countrySelect">
+            <option value="jordan">Jordan</option>
+            <option value="palestine">Palestine</option>
+        </select>
+        <br><br>
+
+        <img src="images/Flag_of_Jordan.svg.png" alt="jordan" height="200px" width="300px" id="countryFlag">
+
+        <script>
+            let selectedOption = document.getElementById("countrySelect");
+            let flagImage = document.getElementById("countryFlag");
+
+            selectedOption.addEventListener("click" , selectedElement);
+
+            function selectedElement(){
+                if(selectedOption.value == "jordan"){
+                    flagImage.src = "images/Flag_of_Jordan.svg.png"
+                }
+                else{
+                    flagImage.src = "images/Palestine_flag.jpg";
+                }
+            }
+      </script>
+      </div>
+
+      <br><br>
+
+      <!-- Exercise # 4 -->
+      <div>
+        <select id="fontSelect">
+            <option value="timesNewRoman">Times New Roman</option>
+            <option value="fantasy">Fantasy</option>
+        </select>
+
+        <select id="sizeSelect">
+            <option value="14px">14px</option>
+            <option value="18px">18px</option>
+        </select>
+
+        <input type="checkbox" id="italic" name="fontDecoration" value="italic"/>
+        <label for="italic">Italic</label>
+        
+        <input type="checkbox" id="bold" name="fontDecoration" value="bold"/>
+        <label for="bold">Bold</label>
+
+        <input type="checkbox" id="underline" name="fontDecoration" value="underline"/>
+        <label for="underline">Underline</label>
+
+        <p id="text">The quick brown fox jumps over the lazy dog</p>
+
+        <script>
+            let paragraph = document.getElementById("text");
+        </script>
+
+        <!-- font family -->
+        <script>
+            let fontType = document.getElementById("fontSelect");
+
+            fontType.addEventListener("click", changeFont);
+
+            function changeFont(){
+                if(fontType.value == "timesNewRoman"){
+                    paragraph.style.fontFamily = "Times New Roman";
+                }
+                else{
+                    paragraph.style.fontFamily = "Fantasy";
+                }
+            }
+        </script>
+
+        <!-- font size -->
+        <script>
+            let fontSize = document.getElementById("sizeSelect");
+
+            fontSize.addEventListener("click", changeSize);
+
+            function changeSize(){
+                if(fontSize.value == "14px"){
+                    paragraph.style.fontSize = "14px";
+                }
+                else{
+                    paragraph.style.fontSize = "18px";
+                }
+            }
+        </script>
+
+        <!-- italic -->
+        <script>
+            let italicChoice = document.getElementById("italic");
+
+            italicChoice.addEventListener("click",checkedChoice);
+
+            function checkedChoice(){
+                if(italicChoice.checked){
+                    paragraph.style.fontStyle = "italic";
+                }
+                else{
+                    paragraph.style.fontStyle = "normal";
+                }
+            }
+        </script>
+
+        <!-- bold -->
+        <script>
+            let boldChoice = document.getElementById("bold");
+
+            boldChoice.addEventListener("click",checkedChoice);
+
+            function checkedChoice(){
+                if(boldChoice.checked){
+                    paragraph.style.fontWeight = "bold";
+                }
+                else{
+                    paragraph.style.fontWeight = "normal";
+                }
+            }
+        </script>
+
+        <!-- underline -->
+        <script>
+            let underlineChoice = document.getElementById("underline");
+
+            underlineChoice.addEventListener("click",checkedChoice);
+
+            function checkedChoice(){
+                if(underlineChoice.checked){
+                    paragraph.style.textDecoration = "underline";
+                }
+                else{
+                    paragraph.style.textDecoration = "normal";
+                }
+            }
+        </script>
+      </div>
+
+      <br><br>
+      
+      <!-- Exercise #5 -->
+       <div>
+        <script></script>
+       </div>
+
+       <br><br>
+
+       <!-- Exercise #6 -->
+       <div>
+        <script></script>
+       </div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="fname">Enter a Fname :</label>
+        <input type="text" id="fname" onclick="validate();">
+
+        <br><br>
+
+        <label for="lname">Enter a Lname :</label>
+        <input type="text" id="lname">
+
+        <br><br>
+
+        <label for="bdate">Enter a BDate :</label>
+        <input type="date" id="bdate">
+
+        <br><br>
+
+        <label for="email">Enter an email :</label>
+        <input type="email" id="email">
+
+        <br><br>
+
+        <label for="email">Confirm Email :</label>
+        <input type="email" id="email">
+
+        <br><br>
+
+        <label for="password">Password :</label>
+        <input type="password" id="password">
+
+        <br><br>
+
+        <label for="cpassword">Confirm password :</label>
+        <input type="password" id="cpassword">
+
+        <br><br>
+
+        <br><br>
+        
+        <input type="submit" id="submit">
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+
+        function validate(){
+            var name = document.getElementById('fname');
+            var trimName = name.value.trim();
+            if(regName.test(trimName)){
+                alert('Valid name given');
+            }else{
+                alert('Invalid name! Please enter only charachters')
+            }
+        }
+        var regBDate = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+
+        function validateBDate(){
+            var date = document.getElementById('bdate');
+            var trimdate = date.value.trim();
+            if(regName.test(trimdate)){
+                alert('Valid date given');
+            }else{
+                alert('Invalid name! Please enter the date as follow -> mm/dd/yyyy')
+            }
+        }
+
+        var regEmail = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+        
+        function validateEmail() {
+        var emailInput = document.getElementById('email');
+        var trimemail = emailInput.value.trim();
+        if (regEmail.test(trimemail)) {
+            alert('Valid email given.');
+        } else {
+            alert('Invalid email given. Please enter a valid email address.');
+        }
+    }
+        });
+    </script>
+</body>
+</html>

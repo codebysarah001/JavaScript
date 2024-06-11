@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dropDown Box Code -->
+    <div>
+        <select id="selectedElement" onchange="changeImage()" >
+
+            <option value="Cats">Cats</option>
+            <option value="Dogs">Dogs</option>
+            <option value="Bees">Bees</option>
+            <option value="Butterfly">Butterfly</option>
+
+        </select>
+
+        <img id="image" src="" width="200" height="200" >
+    </div>
+
+    <br><br>
+
+    <!-- fetch API -->
+    <div>
+        <script>
+
+            const selectedimage = document.getElementById('image')
+            const selectedElement =  document.getElementById("selectedElement")
+
+            async function changeImage(){
+                const response = await fetch("https://66681676f53957909ff67af8.mockapi.io/users/Animals")
+                const jsondata = await response.json()
+                console.log(jsondata)
+                
+                for (let i = 0 ; i< jsondata.length; i++)
+                {
+                    if (selectedElement.value == jsondata[i].name)
+                        {
+                            selectedimage.src = jsondata[i].image
+                        }
+                }
+
+            }
+            changeImage()
+        </script>
+    </div>
+</body>
+</html>

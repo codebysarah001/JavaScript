@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px #aaa;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name :</label>
+        <input type="text" id="name">
+
+        <br><br>
+
+        <label for="age">Age :</label>
+        <input type="text" id="age">
+
+        <br><br>
+        
+        <label for="gender">Gender :</label>
+        <input type="text" id="gender">
+
+        <br><br>
+        
+        <label for="birthdate">Birth date :</label>
+        <input type="date" id="birthdate">
+
+        <br><br>
+        
+        <label for="image">Your Image :</label>
+        <input type="text" id="image">
+
+        <br><br><hr><br>
+        
+        <label for="description">Description :</label>
+        <input type="text" id="description">
+
+        <br><br>
+        
+        <label for="major">Major & University :</label>
+        <input type="text" id="major">
+
+        <br><br>
+        
+        <label for="progLan">Programming Languages :</label>
+        <input type="checkbox" id="html" value="HTML">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" value="CSS" id="css">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" value="JS" id="js">
+        <label for="js">JS</label>
+
+        <br><br><hr><br>
+
+        <label for="sibNumber">Siblings Number :</label>
+        <input type="number" id="sibNumber">
+
+        <br><br>
+
+        <label for="desSiblings">Description Siblings :</label>
+        <input type="text" id="desSiblings">
+
+        <br><br>
+        
+        <input type="submit" id="submit">
+    </form>
+    
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Retrieve 
+            var name = document.getElementById("name").value;
+
+            var age = document.getElementById("age").value;
+
+            var gender = document.getElementById("gender").value;
+
+            var birthdate = document.getElementById("birthdate").value;
+
+            var description = document.getElementById("description").value;
+
+            var major = document.getElementById("major").value;
+
+            var progLan = [];
+
+            if (document.getElementById("html").checked) progLan.push("HTML");
+            if (document.getElementById("css").checked) progLan.push("CSS");
+            if (document.getElementById("js").checked) progLan.push("JS");
+
+            var sibNumber = document.getElementById("sibNumber").value;
+
+            var desSiblings = document.getElementById("desSiblings").value;
+
+
+            
+            // Store in local storage
+            localStorage.setItem("name", name);
+            
+            localStorage.setItem("age", age);
+
+            localStorage.setItem("gender", gender);
+
+            localStorage.setItem("birthdate", birthdate);
+
+            localStorage.setItem("description", description);
+
+            localStorage.setItem("major", major);
+
+            localStorage.setItem("progLan", JSON.stringify(progLan)); // Convert array to string before storing
+
+            localStorage.setItem("sibNumber", sibNumber);
+
+            localStorage.setItem("desSiblings", desSiblings);
+
+        });
+    </script>
+</body>
+</html>
